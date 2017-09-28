@@ -46,9 +46,14 @@ function toggleFbSignIn() {
     // [START_EXCLUDE]
     document.getElementById('fb-login-button').disabled = true;
     // [END_EXCLUDE]
-    }
+}
     // [END buttoncallback]
 
+/**
+ * The ID of the currently signed-in User. We keep track of this to detect Auth state change events that are just
+ * programmatic token refresh but not a User status change.
+ */
+var currentUID;
 
 /**
  * initApp handles setting up UI event listeners and registering Firebase auth listeners:
@@ -98,6 +103,10 @@ function initApp() {
     // [START authstatelistener]
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
+
+            currentUID = user.uid;
+            // TODO splashPage.style.display = 'none';
+            writeUserData(user.uid, user.displayName, user.email, user.photoURL);
             // User is signed in.
             var displayName = user.displayName;
             var email = user.email;
@@ -130,8 +139,17 @@ function initApp() {
             });
         } else {
             // User is signed out.
+            // Set currentUID to null.
+            currentUID = null;
+            // TODO // Display the splash page where you can sign-in.
+            //splashPage.style.display = '';
             // [START_EXCLUDE]
             console.log('null');
+            var signInElem = $(''
+                +'<a id="sign-in" href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-login"></i> Sign In</a>'
+            );
+            $('#user-menu').replaceWith(signInElem);
+            
             // [END_EXCLUDE]
         }
         // [START_EXCLUDE]
