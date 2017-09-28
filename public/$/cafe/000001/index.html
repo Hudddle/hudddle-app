@@ -71,7 +71,8 @@
 			<!-- Right Side Content / End -->
 			<div class="right-side">
 				<div class="header-widget">
-					<a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-login"></i> Sign In</a>
+					<a id="sign-in" href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-login"></i> Sign In</a>
+					
 					<a href="/$/add"class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>
 				</div>
 			</div>
@@ -97,6 +98,10 @@
 						<!-- Login -->
 						<div class="tab-content" id="tab1" style="display: none;">
 							<form method="post" class="login">
+								<div class="form-row">
+									<input type="submit" id="fb-login-button" class="button border margin-top-5" name="login" value="Facebook" />
+									<input type="submit" id="google-login-button" class="button border margin-top-5" name="login" value="Google" />
+								</div>
 
 								<p class="form-row form-row-wide">
 									<label for="username">Username:
@@ -666,6 +671,7 @@
 <script type="text/javascript" src="/scripts/infobox.min.js"></script>
 <script type="text/javascript" src="/scripts/markerclusterer.js"></script>
 <script type="text/javascript" src="/scripts/maps.js"></script>	
+<script type="text/javascript" src="/scripts/app-auth2.js"></script>
 
 
 
