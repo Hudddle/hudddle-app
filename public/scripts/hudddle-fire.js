@@ -15,7 +15,7 @@ function writeUserData(userId, name, email, imageUrl) {
  * Saves a new post to the Firebase DB.
  */
 // [START write_fan_out]
-function writeNewListing(uid, username, picture, title, address, geo, overview, pricing, ameneties ) {
+function writeNewListing(uid, username, picture, title, address, geo, overview, pricing, ameneties, picture, wifiSpeed, freeCoffee ) {
     // A post entry.
     var listingData = {
       host: username,
@@ -23,11 +23,15 @@ function writeNewListing(uid, username, picture, title, address, geo, overview, 
       title: title,
       address: address,
       geo: geo,
-      starCount: 0,
+      starCount: 1,
       overview: overview,
       pricing: pricing,
       ameneties: ameneties,
-      ownerpic: picture
+      ownerpic: picture,
+      reviewCount: 0,
+      wifiSpeed: wifiSpeed,
+      freeCoffee: freeCoffee,
+      isNew: true
     };
   
     // Get a key for a new Post.
@@ -45,7 +49,7 @@ function writeNewListing(uid, username, picture, title, address, geo, overview, 
 /**
  * Creates a new listing for the current user.
  */
-function newListingForCurrentUser(title, address, geo, overview, pricing, ameneties) {
+function newListingForCurrentUser(title, address, geo, overview, pricing, ameneties, picture, wifiSpeed, freeCoffee) {
     // [START single_value_read]
     var userId = firebase.auth().currentUser.uid;
     return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
@@ -59,7 +63,10 @@ function newListingForCurrentUser(title, address, geo, overview, pricing, amenet
                           geo,
                           overview,
                           pricing, 
-                          ameneties);
+                          ameneties,
+                          picture, 
+                          wifiSpeed, 
+                          freeCoffee);
       // [END_EXCLUDE]
     });
     // [END single_value_read]
@@ -73,15 +80,21 @@ function newListingForCurrentUser(title, address, geo, overview, pricing, amenet
 
         $('#add-listing-button').click(function(){
             var title = $('#listing-title').val();
-            var address = "Cogon Ramos, Cebu City";
+            var address = $('#listing-address').val();//"Cogon Ramos, Cebu City";
+            var area = $('#listing-area').val();
             var geo = "10.305410, 123.897837";
-            var overview = ""
-            +"At Workplace Cafe, we give you everything you need to get your work done, plus the lovely vibe of the coffee shop. "
-            +"You are given lots of power outlets, comfy seats, and extra fast WiFi. Other than that, we offer pasta, all-day meals, cakes, health drinks and brain food. ";
-            +"Furthermore, you can ask one of our friendly staff to do things for you like printing and scanning your documents."
-            var pricing = "35,280";
-            var ameneties = "Brewed Coffee or Tea, Fiber Wifi Connection, Lots of Power outlets, Comfortable seats and spacious desks, Napping station"
-            newListingForCurrentUser(title, address, geo, overview, pricing, ameneties);
+            var overview = $('#listing-overview').val();
+            var pricing = $('#listing-pricing-hour input').val() +','+ $('#listing-pricing-day input').val();// csv hourly,daily
+            var ameneties = [];
+            $('#listing-ameneties :checked').each( function (i){
+                var id = $(this).attr('id');
+                ameneties.push($($(this).next('[for='+id+']')[0]).html());
+            });
+            ameneties = ameneties.join(',');
+            var picture = ''
+            var wifiSpeed = $('.listing-wifi-speed:checked').attr('data-wifi-speed');
+            var freeCoffee = $('.listing-free-coffee:checked').attr('data-free-coffee');
+            newListingForCurrentUser(title, address, geo, overview, pricing, ameneties, picture, wifiSpeed, freeCoffee);
         });
     });
 })(this.jQuery);
@@ -95,18 +108,16 @@ function createListItem(listingKey,listing){
     +'            <!-- Image -->'
     +'            <div class="listing-item-image">'
     +'                <img src="/images/listing-item-01.jpg" alt="">'
-    +'                <span class="tag"><i class="fa fa-coffee"></i>Brewed Coffee</span>'
     +'            </div>'
     +'            <!-- Content -->'
     +'            <div class="listing-item-content">'
-    +'                <div class="listing-badge now-open">Now Open</div>'
     +'                <div class="listing-item-inner">'
     +'                    <h3>'+listing.title+'</h3>'
     +'                    <span>'+listing.address+'</span>'
     +'                    <div class="star-rating" data-rating="'+listing.starCount+'">'
-    +'                        <div class="rating-counter">(190 reviews)</div>'
+    +'                        <div class="rating-counter">('+listing.reviewCount+' reviews)</div>'
     +'                    </div>'
-    +'                    <div><i class="im im-icon-Wifi"></i>&nbsp;Fiber Fast</div>'
+    +'                    <div><i class="im im-icon-Wifi"></i>&nbsp;'+listing.wifiSpeed+'</div>'
     +'                </div>'
     +'                <span class="like-icon"></span>'
     +'                <div class="listing-item-details">'
@@ -118,7 +129,18 @@ function createListItem(listingKey,listing){
     +'    </div>'
     +'</div>';
 
+    if(listing.freeCoffee){
+        $(html).find('.listing-item-image').append(
+            '<span class="tag"><i class="fa fa-coffee"></i>'+listing.freeCoffee+'</span>');
+    }
+    
     $('#listings-container').append(html);
+
+    if(listing.isNew){
+        $('#listings-container').find('.listing-item-content').prepend(
+            '<div class="listing-badge now-open">Now Open</div>' );
+    }
+    
     
 }
 
