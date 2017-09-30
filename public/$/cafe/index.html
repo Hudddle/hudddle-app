@@ -24,6 +24,52 @@
 
 <link rel="shortcut icon" href="/favicon.ico">
 
+<style>
+	.timeline-item {
+	background: #fff;
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+	border-radius: 3px;
+}
+@keyframes placeHolderShimmer{
+	0%{
+		background-position: -600px 0
+	}
+	100%{
+		background-position: 600px 0
+	}
+}
+
+.animated-background {
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-name: placeHolderShimmer;
+	animation-timing-function: linear;
+	background: #f6f7f8;
+	background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+	background-size: 800px 104px;
+	height: 96px;
+	position: relative;
+}
+
+.background-masker {
+	background: #fff;
+	/*position: absolute;*/
+}
+
+#splash{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.listing-slider, #content{
+	display: none;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -181,7 +227,9 @@
 </header>
 <div class="clearfix"></div>
 <!-- Header Container / End -->
-
+<div id="splash">
+		<img src="/images/yota_icons.gif" style="width: 100%; max-width:200px;"/>
+</div>
 <!-- Slider
 ================================================== -->
 <div class="listing-slider mfp-gallery-container margin-bottom-0">
@@ -194,22 +242,22 @@
 
 <!-- Content
 ================================================== -->
-<div class="container">
-	<div class="row sticky-wrapper">
-		<div class="col-lg-8 col-md-8 padding-right-30">
+<div id="content" class="container timeline-wrapper">
+	<div class="row sticky-wrapper timeline-item">
+		<div class="col-lg-8 col-md-8 padding-right-30 animated-background">
 
 			<!-- Titlebar -->
 			<div id="titlebar" class="listing-titlebar">
 				<div class="listing-titlebar-title">
-					<h2>Burger House <span class="listing-tag">Eat & Drink</span></h2>
+					<h2><span id="listing-title">&block;&block;&block;&block;&block;&block;&block;&block;&block;</span> <span class="listing-tag">&block;&block;&block;&block;</span></h2>
 					<span>
 						<a href="#listing-location" class="listing-address">
 							<i class="fa fa-map-marker"></i>
-							2726 Shinn Street, New York
+							&block;&block;&block;&block;&block;&block;
 						</a>
 					</span>
 					<div class="star-rating" data-rating="5">
-						<div class="rating-counter"><a href="#listing-reviews">(31 reviews)</a></div>
+						<div class="rating-counter"><a href="#listing-reviews">&block;&block;&block;&block;&block;&block;</a></div>
 					</div>
 				</div>
 			</div>
@@ -231,22 +279,22 @@
 				<!-- Description -->
 
 				<p>
-					Ut euismod ultricies sollicitudin. Curabitur sed dapibus nulla. Nulla eget iaculis lectus. Mauris ac maximus neque. Nam in mauris quis libero sodales eleifend. Morbi varius, nulla sit amet rutrum elementum, est elit finibus tellus, ut tristique elit risus at metus.
+						&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;
 				</p>
 
 				<p>
-					 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.
+						&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;
 				</p>
 
 				<!-- Amenities -->
 				<h3 class="listing-desc-headline">Amenities</h3>
 				<ul class="listing-features checkboxes margin-top-0">
-					<li>Elevator in building</li>
-					<li>Friendly workspace</li>
-					<li>Instant Book</li>
-					<li>Wireless Internet</li>
-					<li>Free parking on premises</li>
-					<li>Free parking on street</li>
+					<li>&block;&block;&block;&block;&block;&block;</li>
+					<li>&block;&block;&block;&block;&block;&block;</li>
+					<li>&block;&block;&block;&block;&block;&block;</li>
+					<li>&block;&block;&block;&block;&block;&block;</li>
+					<li>&block;&block;&block;&block;&block;&block;</li>
+					<li>&block;&block;&block;&block;&block;&block;</li>
 				</ul>
 			</div>
 
@@ -672,6 +720,7 @@
 <script type="text/javascript" src="/scripts/markerclusterer.js"></script>
 <script type="text/javascript" src="/scripts/maps.js"></script>	
 <script type="text/javascript" src="/scripts/app-auth2.js"></script>
+<script type="text/javascript" src="/scripts/hudddle-fire.js"></script>
 
 
 

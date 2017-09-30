@@ -129,12 +129,12 @@ function createListItem(listingKey,listing){
     +'    </div>'
     +'</div>';
 
+    $('#listings-container').append(html);
+
     if(listing.freeCoffee){
-        $(html).find('.listing-item-image').append(
+        $('#listings-container').find('.listing-item-image').append(
             '<span class="tag"><i class="fa fa-coffee"></i>'+listing.freeCoffee+'</span>');
     }
-    
-    $('#listings-container').append(html);
 
     if(listing.isNew){
         $('#listings-container').find('.listing-item-content').prepend(
