@@ -137,6 +137,9 @@ function initApp() {
             $('.user-menu').on('click', function(){
                 $(this).toggleClass('active');
             });
+            var path = ''+window.location.pathname;
+            if( path.indexOf('/lists') !== -1)
+                startDBQuery();
         } else {
             // User is signed out.
             // Set currentUID to null.

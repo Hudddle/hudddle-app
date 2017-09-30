@@ -69,6 +69,8 @@ function newListingForCurrentUser(title, address, geo, overview, pricing, amenet
 (function($){
 "use strict";
     $(document).ready(function(){
+        listingSplash = $('#listings-container').clone();
+
         $('#add-listing-button').click(function(){
             var title = $('#listing-title').val();
             var address = "Cogon Ramos, Cebu City";
@@ -83,3 +85,68 @@ function newListingForCurrentUser(title, address, geo, overview, pricing, amenet
         });
     });
 })(this.jQuery);
+
+function createListItem(listingKey,listing){
+    var uid = firebase.auth().currentUser.uid;
+    var html = ''
+    +'<div class="col-lg-12 col-md-12">'
+    +'    <div class="listing-item-container list-layout">'
+    +'        <a href="/$/cafe/'+listingKey+'" class="listing-item">'     
+    +'            <!-- Image -->'
+    +'            <div class="listing-item-image">'
+    +'                <img src="/images/listing-item-01.jpg" alt="">'
+    +'                <span class="tag"><i class="fa fa-coffee"></i>Brewed Coffee</span>'
+    +'            </div>'
+    +'            <!-- Content -->'
+    +'            <div class="listing-item-content">'
+    +'                <div class="listing-badge now-open">Now Open</div>'
+    +'                <div class="listing-item-inner">'
+    +'                    <h3>'+listing.title+'</h3>'
+    +'                    <span>'+listing.address+'</span>'
+    +'                    <div class="star-rating" data-rating="'+listing.starCount+'">'
+    +'                        <div class="rating-counter">(190 reviews)</div>'
+    +'                    </div>'
+    +'                    <div><i class="im im-icon-Wifi"></i>&nbsp;Fiber Fast</div>'
+    +'                </div>'
+    +'                <span class="like-icon"></span>'
+    +'                <div class="listing-item-details">'
+    +'                    <i class="fa fa-clock-o"></i>&nbsp;'
+    +'                    ₱ '+listing.pricing.split(',')[0]+' &nbsp; <i class="fa fa-sun-o">'
+    +'                    </i>&nbsp;₱ '+listing.pricing.split(',')[1]+'</div>    '
+    +'            </div>'
+    +'        </a>'
+    +'    </div>'
+    +'</div>';
+
+    $('#listings-container').append(html);
+    
+}
+
+function startDBQuery(){
+  // [START my_top_posts_query]
+  var userId = firebase.auth().currentUser.uid;
+  var recentListingsRef = firebase.database().ref('listings').limitToLast(100);
+  recentListingsRef.on('child_added', function(data){
+    createListItem(data.key,data.val());
+    $('.timeline-wrapper').remove();
+  });
+
+  listeningFirebaseRefs.push(recentListingsRef);
+}
+
+var listeningFirebaseRefs = [];
+var listingSplash;
+/**
+ * Cleanups the UI and removes all Firebase listeners.
+ */
+function cleanupUi() {
+
+    $('#listings-container').html('');
+    $('#listings-container').append(listingSplash.html());
+    
+    // Stop all currently listening Firebase listeners.
+    listeningFirebaseRefs.forEach(function(ref) {
+        ref.off();
+    });
+    listeningFirebaseRefs = [];
+}

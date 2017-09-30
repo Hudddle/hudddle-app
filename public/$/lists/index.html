@@ -22,6 +22,44 @@
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/colors/main.css" id="colors">
 
+<style>
+	.timeline-item {
+    background: #fff;
+    border: 1px solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-radius: 3px;
+}
+@keyframes placeHolderShimmer{
+    0%{
+        background-position: -600px 0
+    }
+    100%{
+        background-position: 600px 0
+    }
+}
+
+.animated-background {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    height: 96px;
+    position: relative;
+}
+
+.background-masker {
+    background: #fff;
+    /*position: absolute;*/
+}
+
+</style>
+
+</head>
+
 <link rel="shortcut icon" href="/favicon.ico">
 </head>
 
@@ -213,63 +251,31 @@
 			<!-- Sorting / Layout Switcher / End -->
 
 
-			<div class="row">
-
+			<div id="listings-container"class="row">
 				<!-- Listing Item -->
-				<div class="col-lg-12 col-md-12">
-					<div class="listing-item-container list-layout">
-						<a href="/$/cafe/000001" class="listing-item">
+				<div class="col-lg-12 col-md-12 timeline-wrapper">
+					<div class="listing-item-container list-layout timeline-item">
+						<a href='#' class="listing-item animated-background">
 							
 							<!-- Image -->
-							<div class="listing-item-image">
+							<div class="listing-item-image background-masker">
 								<img src="/images/listing-item-01.jpg" alt="">
-								<span class="tag">Fiber Fast Wifi</span>
 							</div>
 							
 							<!-- Content -->
 							<div class="listing-item-content">
-								<div class="listing-badge now-open">Now Open</div>
-
 								<div class="listing-item-inner">
-									<h3>Workplace Cafe</h3>
-									<span>Cogon Ramos, Cebu City</span>
-									<div class="star-rating" data-rating="4.45">
-										<div class="rating-counter">(190 reviews)</div>
+									<h3 style="color:#f6f7f8">&block;&block;&block;&block;&block;&block;&block;&block;&block;</h3>
+									<span style="color:#f6f7f8">&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;</span>
+									<div class="star-rating" data-rating="5" style="color:#f6f7f8">
+										<div class="rating-counter" style="color:#f6f7f8">&block;&block;</div>
 									</div>
+									<div style="color:#f6f7f8"><i class="im im-icon-Wifi"></i>&nbsp;&block;&block;</div>
 								</div>
 
-								<span class="like-icon"></span>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Listing Item / End -->
-
-				<!-- Listing Item -->
-				<div class="col-lg-12 col-md-12">
-					<div class="listing-item-container list-layout">
-						<a href="/$/cafe/000001" class="listing-item">
-							
-							<!-- Image -->
-							<div class="listing-item-image">
-								<img src="/images/listing-item-02.jpg" alt="">
-								<span class="tag">Loft Tables</span>
-							</div>
-							
-							<!-- Content -->
-							<div class="listing-item-content">
-
-								<div class="listing-item-inner">
-								<h3>Cafe Namu</h3>
-								<span>Times Square, Mandaue City</span>
-									<div class="star-rating" data-rating="4.0">
-										<div class="rating-counter">(34 reviews)</div>
-									</div>
-								</div>
-
-								<span class="like-icon"></span>
+								<span class="" style="color:#f6f7f8"></span>
+								<div class="listing-item-details" style="color:#f6f7f8"><i class="fa fa-clock-o"></i>&nbsp;&block;&block;&block; <i class="fa fa-sun-o"></i>&nbsp;&block;&block;&block;</div>
 								
-								<div class="listing-item-details">Friday, August 10</div>
 							</div>
 						</a>
 					</div>
@@ -277,124 +283,63 @@
 				<!-- Listing Item / End -->
 
 				<!-- Listing Item -->
-				<div class="col-lg-12 col-md-12">
-					<div class="listing-item-container list-layout">
-						<a href="/$/cafe/000001" class="listing-item">
-							
-							<!-- Image -->
-							<div class="listing-item-image">
-								<img src="/images/listing-item-03.jpg" alt="">
-								<span class="tag">Hotels</span>
-							</div>
-							
-							<!-- Content -->
-							<div class="listing-item-content">
-
-								<div class="listing-item-inner">
-								<h3>Hotel Govendor</h3>
-								<span>778 Country Street, New York</span>
-									<div class="star-rating" data-rating="2.0">
-										<div class="rating-counter">(17 reviews)</div>
-									</div>
-								</div>
-
-								<span class="like-icon"></span>
-
-								<div class="listing-item-details">Starting from $59 per night</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Listing Item / End -->
-
-				<!-- Listing Item -->
-				<div class="col-lg-12 col-md-12">
-					<div class="listing-item-container list-layout">
-						<a href="/$/cafe/000001" class="listing-item">
-							
-							<!-- Image -->
-							<div class="listing-item-image">
-								<img src="/images/listing-item-04.jpg" alt="">
-								<span class="tag">Eat & Drink</span>
-							</div>
-							
-							<!-- Content -->
-							<div class="listing-item-content">
-								<div class="listing-badge now-open">Now Open</div>
+				<div class="col-lg-12 col-md-12 timeline-wrapper">
+						<div class="listing-item-container list-layout timeline-item">
+							<a href='#' class="listing-item animated-background">
 								
-								<div class="listing-item-inner">
-								<h3>Burger House</h3>
-								<span>2726 Shinn Street, New York</span>
-									<div class="star-rating" data-rating="5.0">
-										<div class="rating-counter">(31 reviews)</div>
-									</div>
+								<!-- Image -->
+								<div class="listing-item-image background-masker">
+									<img src="/images/listing-item-01.jpg" alt="">
 								</div>
-
-								<span class="like-icon"></span>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Listing Item / End -->
-
-				<!-- Listing Item -->
-				<div class="col-lg-12 col-md-12">
-					<div class="listing-item-container list-layout">
-						<a href="/$/cafe/000001" class="listing-item">
-							
-							<!-- Image -->
-							<div class="listing-item-image">
-								<img src="/images/listing-item-05.jpg" alt="">
-								<span class="tag">Other</span>
-							</div>
-							
-							<!-- Content -->
-							<div class="listing-item-content">
-
-								<div class="listing-item-inner">
-								<h3>Airport</h3>
-								<span>1512 Duncan Avenue, New York</span>
-									<div class="star-rating" data-rating="3.5">
-										<div class="rating-counter">(46 reviews)</div>
+								
+								<!-- Content -->
+								<div class="listing-item-content">
+									<div class="listing-item-inner">
+										<h3 style="color:#f6f7f8">&block;&block;&block;&block;&block;&block;&block;&block;&block;</h3>
+										<span style="color:#f6f7f8">&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;</span>
+										<div class="star-rating" data-rating="5" style="color:#f6f7f8">
+											<div class="rating-counter" style="color:#f6f7f8">&block;&block;</div>
+										</div>
+										<div style="color:#f6f7f8"><i class="im im-icon-Wifi"></i>&nbsp;&block;&block;</div>
 									</div>
+	
+									<span class="" style="color:#f6f7f8"></span>
+									<div class="listing-item-details" style="color:#f6f7f8"><i class="fa fa-clock-o"></i>&nbsp;&block;&block;&block; <i class="fa fa-sun-o"></i>&nbsp;&block;&block;&block;</div>
+									
 								</div>
-
-								<span class="like-icon"></span>
-							</div>
-						</a>
+							</a>
+						</div>
 					</div>
-				</div>
-				<!-- Listing Item / End -->
-
-				<!-- Listing Item -->
-				<div class="col-lg-12 col-md-12">
-					<div class="listing-item-container list-layout">
-						<a href="/$/cafe/000001" class="listing-item">
-							
-							<!-- Image -->
-							<div class="listing-item-image">
-								<img src="/images/listing-item-06.jpg" alt="">
-								<span class="tag">Eat & Drink</span>
-							</div>
-							
-							<!-- Content -->
-							<div class="listing-item-content">
-								<div class="listing-badge now-closed">Now Closed</div>
-
-								<div class="listing-item-inner">
-								<h3>Think Coffee</h3>
-								<span>215 Terry Lane, New York</span>
-									<div class="star-rating" data-rating="5.0">
-										<div class="rating-counter">(31 reviews)</div>
+					<!-- Listing Item / End -->
+					<!-- Listing Item -->
+					<div class="col-lg-12 col-md-12 timeline-wrapper">
+						<div class="listing-item-container list-layout timeline-item">
+							<a href='#' class="listing-item animated-background">
+								
+								<!-- Image -->
+								<div class="listing-item-image background-masker">
+									<img src="/images/listing-item-01.jpg" alt="">
+								</div>
+								
+								<!-- Content -->
+								<div class="listing-item-content">
+									<div class="listing-item-inner">
+										<h3 style="color:#f6f7f8">&block;&block;&block;&block;&block;&block;&block;&block;&block;</h3>
+										<span style="color:#f6f7f8">&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;</span>
+										<div class="star-rating" data-rating="5" style="color:#f6f7f8">
+											<div class="rating-counter" style="color:#f6f7f8">&block;&block;</div>
+										</div>
+										<div style="color:#f6f7f8"><i class="im im-icon-Wifi"></i>&nbsp;&block;&block;</div>
 									</div>
+	
+									<span class="" style="color:#f6f7f8"></span>
+									<div class="listing-item-details" style="color:#f6f7f8"><i class="fa fa-clock-o"></i>&nbsp;&block;&block;&block; <i class="fa fa-sun-o"></i>&nbsp;&block;&block;&block;</div>
+									
 								</div>
-
-								<span class="like-icon"></span>
-							</div>
-						</a>
+							</a>
+						</div>
 					</div>
-				</div>
-				<!-- Listing Item / End -->
+					<!-- Listing Item / End -->
 
 			</div>
 
@@ -615,6 +560,7 @@
 <script type="text/javascript" src="/scripts/tooltips.min.js"></script>
 <script type="text/javascript" src="/scripts/custom.js"></script>
 <script type="text/javascript" src="/scripts/app-auth2.js"></script>
+<script type="text/javascript" src="/scripts/hudddle-fire.js"></script>
 
 
 
