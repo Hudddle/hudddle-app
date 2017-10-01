@@ -25,38 +25,6 @@
 <link rel="shortcut icon" href="/favicon.ico">
 
 <style>
-	.timeline-item {
-	background: #fff;
-	border: 1px solid;
-	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
-	border-radius: 3px;
-}
-@keyframes placeHolderShimmer{
-	0%{
-		background-position: -600px 0
-	}
-	100%{
-		background-position: 600px 0
-	}
-}
-
-.animated-background {
-	animation-duration: 1s;
-	animation-fill-mode: forwards;
-	animation-iteration-count: infinite;
-	animation-name: placeHolderShimmer;
-	animation-timing-function: linear;
-	background: #f6f7f8;
-	background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
-	background-size: 800px 104px;
-	height: 96px;
-	position: relative;
-}
-
-.background-masker {
-	background: #fff;
-	/*position: absolute;*/
-}
 
 #splash{
 	display: flex;
@@ -64,7 +32,7 @@
 	justify-content: center;
 }
 
-.listing-slider, #content{
+#content{
 	display: none;
 }
 
@@ -228,7 +196,7 @@
 <div class="clearfix"></div>
 <!-- Header Container / End -->
 <div id="splash">
-		<img src="/images/yota_icons.gif" style="width: 100%; max-width:200px;"/>
+		<img src="/images/shake.gif" style="width: 100%; max-width:200px;"/>
 </div>
 <!-- Slider
 ================================================== -->
@@ -249,15 +217,14 @@
 			<!-- Titlebar -->
 			<div id="titlebar" class="listing-titlebar">
 				<div class="listing-titlebar-title">
-					<h2><span id="listing-title">&block;&block;&block;&block;&block;&block;&block;&block;&block;</span> <span class="listing-tag">&block;&block;&block;&block;</span></h2>
+					<h2><span id="listing-title"></span> <span class="listing-tag">&block;&block;&block;&block;</span></h2>
 					<span>
-						<a href="#listing-location" class="listing-address">
+						<a id="listing-address" href="#listing-location" class="listing-address">
 							<i class="fa fa-map-marker"></i>
-							&block;&block;&block;&block;&block;&block;
 						</a>
 					</span>
 					<div class="star-rating" data-rating="5">
-						<div class="rating-counter"><a href="#listing-reviews">&block;&block;&block;&block;&block;&block;</a></div>
+						<div class="rating-counter"><a id="listing-reviewCount" lihref="#listing-reviews"></a></div>
 					</div>
 				</div>
 			</div>
@@ -274,27 +241,18 @@
 			</div>
 			
 			<!-- Overview -->
-			<div id="listing-overview" class="listing-section">
-
+			<div class="listing-section">
+					
 				<!-- Description -->
 
-				<p>
-						&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;
-				</p>
-
-				<p>
-						&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;
+				<p id="listing-overview">
+					Ut euismod ultricies sollicitudin. Curabitur sed dapibus nulla. Nulla eget iaculis lectus. Mauris ac maximus neque. Nam in mauris quis libero sodales eleifend. Morbi varius, nulla sit amet rutrum elementum, est elit finibus tellus, ut tristique elit risus at metus.
 				</p>
 
 				<!-- Amenities -->
 				<h3 class="listing-desc-headline">Amenities</h3>
 				<ul class="listing-features checkboxes margin-top-0">
-					<li>&block;&block;&block;&block;&block;&block;</li>
-					<li>&block;&block;&block;&block;&block;&block;</li>
-					<li>&block;&block;&block;&block;&block;&block;</li>
-					<li>&block;&block;&block;&block;&block;&block;</li>
-					<li>&block;&block;&block;&block;&block;&block;</li>
-					<li>&block;&block;&block;&block;&block;&block;</li>
+					
 				</ul>
 			</div>
 

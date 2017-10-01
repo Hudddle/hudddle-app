@@ -96,6 +96,15 @@ function newListingForCurrentUser(title, address, geo, overview, pricing, amenet
             var freeCoffee = $('.listing-free-coffee:checked').attr('data-free-coffee');
             newListingForCurrentUser(title, address, geo, overview, pricing, ameneties, picture, wifiSpeed, freeCoffee);
         });
+
+        var lid = getUrlParameter('lid');
+        if(lid){
+            firebase.database().ref('/listings/' + lid).once('value').then(function(snapshot){
+                populateListDetails(snapshot.val());
+                $('#splash').fadeOut();
+                $('.listing-slider, #content').fadeIn('slow');
+            });
+        }
     });
 })(this.jQuery);
 
@@ -104,7 +113,7 @@ function createListItem(listingKey,listing){
     var html = ''
     +'<div class="col-lg-12 col-md-12">'
     +'    <div class="listing-item-container list-layout">'
-    +'        <a href="/$/cafe/'+listingKey+'" class="listing-item">'     
+    +'        <a href="/$/cafe/?lid='+listingKey+'" class="listing-item">'     
     +'            <!-- Image -->'
     +'            <div class="listing-item-image">'
     +'                <img src="/images/listing-item-01.jpg" alt="">'
@@ -171,4 +180,51 @@ function cleanupUi() {
         ref.off();
     });
     listeningFirebaseRefs = [];
+}
+
+function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+}
+
+function populateListDetails(listData){
+    // // A post entry.
+    // var listingData = {
+    //     host: username,
+    //     uid: uid,
+    //     title: title,
+    //     address: address,
+    //     geo: geo,
+    //     starCount: 1,
+    //     overview: overview,
+    //     pricing: pricing,
+    //     ameneties: ameneties,
+    //     ownerpic: picture,
+    //     reviewCount: 0,
+    //     wifiSpeed: wifiSpeed,
+    //     freeCoffee: freeCoffee,
+    //     isNew: true
+    //   };
+
+    $('#listing-title').html(listData.title);
+    $('#listing-address').append(listData.address);
+    $('#listing-starCount').attr('data-rating', listData.starCount );
+    $('#listing-reviewCount').html(listData.reviewCount);
+    $('#listing-overview').html(listData.overview);
+    var ameneties = listData.ameneties.split(',');
+
+    for( key in ameneties ){
+        $('.listing-features').append('<li>'+ameneties[key]+'</li>');
+    }
+
 }
