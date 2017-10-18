@@ -19,8 +19,8 @@ input#booking-time {
     transition: color 0.3s;
 }
 
-input#booking-date:hover,
-input#booking-time:hover {
+input.booking-date:hover,
+input.booking-time:hover {
     color: #444;
 }
 

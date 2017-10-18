@@ -236,7 +236,6 @@
 					<li><a href="#listing-pricing-list">Pricing</a></li>
 					<li><a href="#listing-location">Location</a></li>
 					<li><a href="#listing-reviews">Reviews</a></li>
-					<li><a href="#add-review">Add Review</a></li>
 				</ul>
 			</div>
 			
@@ -251,72 +250,47 @@
 
 				<!-- Amenities -->
 				<h3 class="listing-desc-headline">Amenities</h3>
-				<ul class="listing-features checkboxes margin-top-0">
+				<ul id="listing-ameneties" class="listing-features checkboxes margin-top-0">
 					
 				</ul>
+
+				<!-- Amenities -->
+				<h3 class="listing-desc-headline">Prices</h3>
+				<ul id="listing-prices" class="listing-features checkboxes margin-top-0">
+					
+				</ul>
+				<br>
+				<h4>Always communicate through Hudddle</h4>
+				<p>
+					To protect your payment, never transfer money or communicate outside of the Hudddle website or app. Learn more
+				</p>
+				
 			</div>
 
-
-			<!-- Food Menu -->
-			<div id="listing-pricing-list" class="listing-section">
-				<h3 class="listing-desc-headline margin-top-70 margin-bottom-30">Pricing</h3>
-
+			<!-- Overview -->
+			<div class="listing-section">
+					
+				<h3 class="listing-desc-headline">House Rules</h3>
 				<div class="show-more">
-					<div class="pricing-list-container">
-						
-						<!-- Food List -->
-						<h4>Burgers</h4>
-						<ul>
-							<li>
-								<h5>Classic Burger</h5>
-								<p>Beef, salad, mayonnaise, spicey relish, cheese</p>
-								<span>$6</span>
-							</li>
-							<li>
-								<h5>Cheddar Burger</h5>
-								<p>Cheddar cheese, lettuce, tomato, onion, dill pickles</p>
-								<span>$6</span>
-							</li>
-							<li>
-								<h5>Veggie Burger</h5>
-								<p>Panko crumbed and fried, grilled peppers and mushroom</p>
-								<span>$6</span>
-							</li>
-							<li>
-								<h5>Chicken Burger</h5>
-								<p>Cheese, chicken fillet, avocado, bacon, tomatoes, basil</p>
-								<span>$6</span>
-							</li>
-						</ul>
-
-						<!-- Food List -->
-						<h4>Drinks</h4>
-						<ul>
-							<li>
-								<h5>Frozen Shake</h5>
-								<span>$4</span>
-							</li>
-							<li>
-								<h5>Orange Juice</h5>
-								<span>$4</span>
-							</li>
-							<li>
-								<h5>Beer</h5>
-								<span>$4</span>
-							</li>
-							<li>
-								<h5>Water</h5>
-								<span>Free</span>
-							</li>
-						</ul>
-
-					</div>
+					<p>
+						No smoking<br>
+						Not suitable for pets<br>
+						No distracting noise<br>
+						Self check-in with doorman<br>
+						<br><br>
+						1.) Enjoy and feel at home. Please use and take care of it as if its your own :)
+					<br>2.) No pets please.
+					<br>3.) Strictly no smoking please. 
+					<br>4.) Help us preserve Mother Earth by turning off any appliances that are not in use and by properly closing the faucets every after use.
+					<br>5.) No distracting noise inside the premises please.
+					<br>6.) Respect other unit owners by not being noisy.
+					<br>7.) Guest parking space is free for 2 hours. Succeeding hours has a fee. We'll recommend alternative parking areas incase you have a car.
+					</p>
 				</div>
 				<a href="#" class="show-more-button" data-more-title="Show More" data-less-title="Show Less"><i class="fa fa-angle-down"></i></a>
+				
 			</div>
-			<!-- Food Menu / End -->
 
-		
 			<!-- Location -->
 			<div id="listing-location" class="listing-section">
 				<h3 class="listing-desc-headline margin-top-60 margin-bottom-30">Location</h3>
@@ -413,77 +387,6 @@
 				<!-- Pagination / End -->
 			</div>
 
-
-			<!-- Add Review Box -->
-			<div id="add-review" class="add-review-box">
-
-				<!-- Add Review -->
-				<h3 class="listing-desc-headline margin-bottom-20">Add Review</h3>
-				
-				<span class="leave-rating-title">Your rating for this listing</span>
-				
-				<!-- Rating / Upload Button -->
-				<div class="row">
-					<div class="col-md-6">
-						<!-- Leave Rating -->
-						<div class="clearfix"></div>
-						<div class="leave-rating margin-bottom-30">
-							<input type="radio" name="rating" id="rating-1" value="1"/>
-							<label for="rating-1" class="fa fa-star"></label>
-							<input type="radio" name="rating" id="rating-2" value="2"/>
-							<label for="rating-2" class="fa fa-star"></label>
-							<input type="radio" name="rating" id="rating-3" value="3"/>
-							<label for="rating-3" class="fa fa-star"></label>
-							<input type="radio" name="rating" id="rating-4" value="4"/>
-							<label for="rating-4" class="fa fa-star"></label>
-							<input type="radio" name="rating" id="rating-5" value="5"/>
-							<label for="rating-5" class="fa fa-star"></label>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-
-					<div class="col-md-6">
-						<!-- Uplaod Photos -->
-						<div class="add-review-photos margin-bottom-30">
-							<div class="photoUpload">
-							    <span><i class="sl sl-icon-arrow-up-circle"></i> Upload Photos</span>
-							    <input type="file" class="upload" />
-							</div>
-						</div>
-					</div>
-				</div>
-	
-				<!-- Review Comment -->
-				<form id="add-comment" class="add-comment">
-					<fieldset>
-
-						<div class="row">
-							<div class="col-md-6">
-								<label>Name:</label>
-								<input type="text" value=""/>
-							</div>
-								
-							<div class="col-md-6">
-								<label>Email:</label>
-								<input type="text" value=""/>
-							</div>
-						</div>
-
-						<div>
-							<label>Review:</label>
-							<textarea cols="40" rows="3"></textarea>
-						</div>
-
-					</fieldset>
-
-					<button class="button">Submit Review</button>
-					<div class="clearfix"></div>
-				</form>
-
-			</div>
-			<!-- Add Review Box / End -->
-
-
 		</div>
 
 
@@ -493,57 +396,28 @@
 
 			<!-- Book Now -->
 			<div class="boxed-widget">
-				<h3><i class="fa fa-calendar-check-o "></i> Book a Table</h3>
+				<h3><i class="fa fa-calendar-check-o "></i> ₱<strong id="listing-daily-rate"></strong> per day</h3>
 				<div class="row with-forms  margin-top-0">
 
 					<!-- Date Picker - docs: http://www.vasterad.com/docs/listeo/#!/date_picker -->
 					<div class="col-lg-6 col-md-12">
-						<input type="text" id="booking-date" data-lang="en" data-large-mode="true" data-min-year="2017" data-max-year="2020">
+						<label>Check In</label>
+						<input type="text" id="check-in-date" class="booking-date" data-lang="en" data-large-mode="true" data-min-year="2017" data-max-year="2020">
 					</div>
 
-					<!-- Time Picker - docs: http://www.vasterad.com/docs/listeo/#!/time_picker -->
+					<!-- Date Picker - docs: http://www.vasterad.com/docs/listeo/#!/date_picker -->
 					<div class="col-lg-6 col-md-12">
-						<input type="text" id="booking-time" value="9:00 am">
-					</div>
+							<label>Check Out</label>
+							<input type="text" id="check-out-date" class="booking-date" data-lang="en" data-large-mode="true" data-min-year="2017" data-max-year="2020">
+						</div>
 
 				</div>
 				
 				<!-- progress button animation handled via custom.js -->
 				<button class="progress-button button fullwidth margin-top-5"><span>Book Now</span></button>
+				<h5>You wont be charged yet.</h5>
 			</div>
 			<!-- Book Now / End -->
-
-
-			<!-- Contact -->
-			<div class="boxed-widget margin-top-35">
-				<h3><i class="sl sl-icon-pin"></i> Contact</h3>
-				<ul class="listing-details-sidebar">
-					<li><i class="sl sl-icon-phone"></i> (123) 123-456</li>
-					<li><i class="sl sl-icon-globe"></i> <a href="#">http://example.com</a></li>
-					<li><i class="fa fa-envelope-o"></i> <a href="#">info@example.com</a></li>
-				</ul>
-
-				<ul class="listing-details-sidebar social-profiles">
-					<li><a href="#" class="facebook-profile"><i class="fa fa-facebook-square"></i> Facebook</a></li>
-					<li><a href="#" class="twitter-profile"><i class="fa fa-twitter"></i> Twitter</a></li>
-					<!-- <li><a href="#" class="gplus-profile"><i class="fa fa-google-plus"></i> Google Plus</a></li> -->
-				</ul>
-
-				<!-- Reply to review popup -->
-				<div id="small-dialog" class="zoom-anim-dialog mfp-hide">
-					<div class="small-dialog-header">
-						<h3>Send Message</h3>
-					</div>
-					<div class="message-reply margin-top-0">
-						<textarea cols="40" rows="3" placeholder="Your message to Burger House"></textarea>
-						<button class="button">Send Message</button>
-					</div>
-				</div>
-
-				<a href="#small-dialog" class="send-message-to-owner button popup-with-zoom-anim"><i class="sl sl-icon-envelope-open"></i> Send Message</a>
-			</div>
-			<!-- Contact / End-->
-			
 
 			<!-- Opening Hours -->
 			<div class="boxed-widget opening-hours margin-top-35">
@@ -685,7 +559,7 @@
 <!-- Date Picker - docs: http://www.vasterad.com/docs/listeo/#!/date_picker -->
 <link href="/css/plugins/datedropper.css" rel="stylesheet" type="text/css">
 <script src="/scripts/datedropper.js"></script>
-<script>$('#booking-date').dateDropper();</script> 
+<script>$('.booking-date').dateDropper();</script> 
 
 <!-- Time Picker - docs: http://www.vasterad.com/docs/listeo/#!/time_picker -->
 <script src="/scripts/timedropper.js"></script>

@@ -221,10 +221,17 @@ function populateListDetails(listData){
     $('#listing-starCount').attr('data-rating', listData.starCount );
     $('#listing-reviewCount').html(listData.reviewCount);
     $('#listing-overview').html(listData.overview);
+    $('#listing-daily-rate').html(listData.dailyRate);
     var ameneties = listData.ameneties.split(',');
 
     for( key in ameneties ){
-        $('.listing-features').append('<li>'+ameneties[key]+'</li>');
+        $('#listing-ameneties').append('<li>'+ameneties[key]+'</li>');
     }
+    $('#listing-prices').append('<li>Weekly Discount: <strong>'+ listData.weeklyDiscount +'%</strong></li>');
+    $('#listing-prices').append('<li>Monthly Discount: <strong>'+ listData.monthlyDiscount +'%</strong></li>');
+
+}
+
+function populateListingReview(listReviewData){
 
 }
