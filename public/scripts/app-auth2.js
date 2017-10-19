@@ -70,10 +70,8 @@ function initApp() {
             // This gives you a Google Access Token. You can use it to access the Google API.
             var token = result.credential.accessToken;
             // [START_EXCLUDE]
-            debugger;
             console.log(token);
         } else {
-            debugger;
             console.log('null');
         // [END_EXCLUDE]
         }
@@ -115,7 +113,6 @@ function initApp() {
             var isAnonymous = user.isAnonymous;
             var uid = user.uid;
             var providerData = user.providerData;
-            debugger;
             // [START_EXCLUDE]
             //document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
             //document.getElementById('quickstart-sign-in').textContent = 'Sign out';
@@ -137,6 +134,7 @@ function initApp() {
             $('.user-menu').on('click', function(){
                 $(this).toggleClass('active');
             });
+            stickyHeaderInit();
             var path = ''+window.location.pathname;
             if( path.indexOf('/lists') !== -1)
                 startDBQuery();
@@ -169,3 +167,28 @@ function initApp() {
     window.onload = function() {
         initApp();
     };
+
+function stickyHeaderInit(){
+    	/*----------------------------------------------------*/
+	/*  Sticky Header 
+	/*----------------------------------------------------*/
+	$( "#header" ).not( "#header.not-sticky" ).clone(true).addClass('cloned unsticky').insertAfter( "#header" );
+	$( "#navigation.style-2" ).clone(true).addClass('cloned unsticky').insertAfter( "#navigation.style-2" );
+
+	// Logo for header style 2
+	$( "#logo .sticky-logo" ).clone(true).prependTo("#navigation.style-2.cloned ul#responsive");
+
+
+	// sticky header script
+	var headerOffset = $("#header-container").height() * 2; // height on which the sticky header will shows
+
+	$(window).scroll(function(){
+		if($(window).scrollTop() >= headerOffset){
+			$("#header.cloned").addClass('sticky').removeClass("unsticky");
+			$("#navigation.style-2.cloned").addClass('sticky').removeClass("unsticky");
+		} else {
+			$("#header.cloned").addClass('unsticky').removeClass("sticky");
+			$("#navigation.style-2.cloned").addClass('unsticky').removeClass("sticky");
+		}
+	});
+}

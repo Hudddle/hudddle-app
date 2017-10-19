@@ -561,27 +561,5 @@
 <script src="/scripts/datedropper.js"></script>
 <script>$('.booking-date').dateDropper();</script> 
 
-<!-- Time Picker - docs: http://www.vasterad.com/docs/listeo/#!/time_picker -->
-<script src="/scripts/timedropper.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/plugins/timedropper.css"> 
-<script>
-this.$('#booking-time').timeDropper({
-	setCurrentTime: false,
-	meridians: true,
-	primaryColor: "#f91942",
-	borderColor: "#f91942",
-	minutesInterval: '15'
-});
-
-var $clocks = $('.td-input');
-	_.each($clocks, function(clock){
-	clock.value = null;
-});
-</script> 
-
-
-
-
-
 </body>
 </html>

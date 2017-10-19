@@ -230,8 +230,23 @@ function populateListDetails(listData){
     $('#listing-prices').append('<li>Weekly Discount: <strong>'+ listData.weeklyDiscount +'%</strong></li>');
     $('#listing-prices').append('<li>Monthly Discount: <strong>'+ listData.monthlyDiscount +'%</strong></li>');
 
+    var listingSliderImages = listData.sliderImages;
+    populateListingImages(listingSliderImages);
+
 }
 
 function populateListingReview(listReviewData){
 
+}
+
+function populateListingImages(listingSliderImages){
+
+    // $.each(listingSliderImages, function(index, img){
+    //     $('.listing-slider').append(''
+    //     +'<a href="'+img+'" '
+    //     +'data-background-image="'+img+'" '
+    //     +'class="item mfp-gallery" title="Title 1"></a>');
+    // });
+    // $(document).ready();
+    
 }

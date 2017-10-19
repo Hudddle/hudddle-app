@@ -57,7 +57,7 @@ $(document).ready(function(){
 	/*----------------------------------------------------*/
 	/*  Sticky Header 
 	/*----------------------------------------------------*/
-	$( "#header" ).not( "#header.not-sticky" ).clone(true).addClass('cloned unsticky').insertAfter( "#header" );
+/*	$( "#header" ).not( "#header.not-sticky" ).clone(true).addClass('cloned unsticky').insertAfter( "#header" );
 	$( "#navigation.style-2" ).clone(true).addClass('cloned unsticky').insertAfter( "#navigation.style-2" );
 
 	// Logo for header style 2
@@ -76,7 +76,7 @@ $(document).ready(function(){
 			$("#navigation.style-2.cloned").addClass('unsticky').removeClass("sticky");
 		}
 	});
-
+*/
 
 	/*----------------------------------------------------*/
 	/*  Back to Top
@@ -997,7 +997,7 @@ $(document).ready(function(){
         $('html,body').scrollTo(this.hash, this.hash, { gap: {y: -100} }); 
     });
 
-
+	/*
     // Highlighting functionality.
 	$(window).on('load resize', function() {
 		var aChildren = $(".listing-nav li").children();
@@ -1021,7 +1021,7 @@ $(document).ready(function(){
 		        }
 		    }
 		});
-	});
+	});*/
 
 
 	/*----------------------------------------------------*/
