@@ -110,6 +110,7 @@ function newListingForCurrentUser(title, address, geo, overview, pricing, amenet
 
 function createListItem(listingKey,listing){
     var uid = firebase.auth().currentUser.uid;
+
     var html = ''
     +'<div class="col-lg-12 col-md-12">'
     +'    <div class="listing-item-container list-layout">'
@@ -137,6 +138,16 @@ function createListItem(listingKey,listing){
     +'        </a>'
     +'    </div>'
     +'</div>';
+
+    var storageRef = firebase.storage().ref();
+    var spaceRef = storageRef.child(listingKey+'/listing-item-01.jpg');
+    spaceRef.getDownloadURL().then(function(url) {
+
+        $(html).find('.listing-item-content img').attr('src', url);
+
+    }).catch(function(error) {
+
+    });
 
     $('#listings-container').append(html);
 

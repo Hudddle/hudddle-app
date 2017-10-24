@@ -200,12 +200,21 @@
 </div>
 <!-- Slider
 ================================================== -->
-<div class="listing-slider mfp-gallery-container margin-bottom-0">
-	<a href="/images/single-listing-01.jpg" data-background-image="/images/single-listing-01.jpg" class="item mfp-gallery" title="Title 1"></a>
-	<a href="/images/single-listing-02.jpg" data-background-image="/images/single-listing-02.jpg" class="item mfp-gallery" title="Title 3"></a>
-	<a href="/images/single-listing-03.jpg" data-background-image="/images/single-listing-03.jpg" class="item mfp-gallery" title="Title 2"></a>
-	<a href="/images/single-listing-04.jpg" data-background-image="/images/single-listing-04.jpg" class="item mfp-gallery" title="Title 4"></a>
+<div id="list-slider-container" class="listing-slider mfp-gallery-container margin-bottom-0">
 </div>
+<script>
+	(function(){
+		var sliderContainer = document.getElementById("list-slider-container");
+		for( var x=0; x< 4; x++){
+			var slide = document.createElement('a');
+			var lidx = x+1;
+			slide.setAttribute('href', '/images/single-listing-0'+lidx+'.jpg');
+			slide.setAttribute('data-background-image', '/images/single-listing-0'+lidx+'.jpg');
+			slide.setAttribute('class', 'item mfp-gallery');
+			sliderContainer.appendChild(slide);
+		}
+	})();	
+</script>
 
 
 <!-- Content
